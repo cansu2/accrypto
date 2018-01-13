@@ -1,0 +1,21 @@
+body {
+    background-color: black;
+}
+
+.logo-text{
+    font-size: 40px;
+    margin-top: 50px;
+    color: rgb(183, 212, 51);
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+.logo-text:hover {
+    color: rgb(60, 226, 27);
+    text-align: center
+    font-family: 'Playfair Display', serif;
+}
+
+#searchbar {
+    margin-top: 100px;
+}
