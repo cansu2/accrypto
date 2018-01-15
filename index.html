@@ -12,25 +12,26 @@
     <title>Accrypto</title>
 </head>
 
-<body>
+<body class="hidden">
 
     <div class="container">
         <div class="row" id="logo">
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
-                <h1 class="logo-text">ACCRYPTO!</h1>
+                <img class="main-logo" src="assets/images/Logo_Large.png" alt="Accrytpo">
             </div>
             <div class="col-sm-4"></div>
         </div>
         <div class="row" id="searchbar">
             <div class="col-sm-4"></div>
-            <div class="col-sm-4">
+            <div class="col-sm-5">
                     <div class="form-group">                           
-                            <input type="text" class="form-control" id="usr" placeholder="search">
+                            <input type="text" class="form-control hidden" id="usr" placeholder="Find Your Currency">
                     </div>
             </div>
-            <div class="col-sm-4"></div>
+            <div class="col-sm-3"><button onclick="document.getElementById('sound1').play();" type="button" class="btn btn-warning center-block coin">Search</button></div>
         </div>
+        <audio id="sound1" src="assets/sounds/smw_coin.wav" preload="auto"></audio>
 
 
 
