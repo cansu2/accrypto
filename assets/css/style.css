@@ -1,16 +1,12 @@
 body {
     background-color: black;
+    max-width: 900px;
 }
 
 .main-logo {
     margin-top: 90px
 }
 
-.logo-text:hover {
-    color: rgb(60, 226, 27);
-    text-align: center
-    font-family: 'Playfair Display', serif;
-}
 
 #searchbar {
     margin-top: 100px;

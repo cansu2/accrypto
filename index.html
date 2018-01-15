@@ -10,15 +10,17 @@
     <link href="https://fonts.googleapis.com/css?family=Joti+One|Playfair+Display" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Accrypto</title>
+ 
 </head>
 
 <body class="hidden">
+
 
     <div class="container">
         <div class="row" id="logo">
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
-                <img class="main-logo" src="assets/images/Logo_Large.png" alt="Accrytpo">
+                <img class="main-logo img-responsive" src="assets/images/Logo_Large.png" alt="Accrytpo">
             </div>
             <div class="col-sm-4"></div>
         </div>
@@ -29,9 +31,19 @@
                             <input type="text" class="form-control hidden" id="usr" placeholder="Find Your Currency">
                     </div>
             </div>
-            <div class="col-sm-3"><button onclick="document.getElementById('sound1').play();" type="button" class="btn btn-warning center-block coin">Search</button></div>
+            <div class="col-sm-3">
+                <button type="button" onclick="document.getElementById('sound1').play();" id="search" class="btn btn-outline-warning center-block coin">Search</button>
+            </div>
         </div>
-        <audio id="sound1" src="assets/sounds/smw_coin.wav" preload="auto"></audio>
+                <div class="row">
+                    <div class="col-sm-5"></div>
+                    <div class="col-sm-3">
+                    <button type="button" class="btn btn-outline-light">Login</button>
+                    <button type="button" class="btn btn-outline-light">Sign Up</button>
+                    </div>
+                    <div class="col-sm-4"></div>
+                </div>
+        
 
 
 
@@ -41,17 +53,15 @@
     </div>
 
     
-
+    <audio id="sound1" src="assets/sounds/smw_coin.wav" preload="auto"></audio>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/javascript/constants.js"></script>
-    <script src="assets/javascript/script.js" type="text/javascript">
-    </script>
+    <script src="assets/javascript/script.js" type="text/javascript"></script>
 
-    <!-- Bootstrap JS -->
+   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
         crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-        crossorigin="anonymous"></script>
+  
 </body>
 
 </html>
