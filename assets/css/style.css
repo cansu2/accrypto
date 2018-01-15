@@ -1,6 +1,5 @@
 body {
     background-color: black;
-    max-width: 900px;
 }
 
 .main-logo {
@@ -14,4 +13,16 @@ body {
 
 .hidden {
     display: none;
+}
+
+.form-group {
+    border-width: 1px;
+    border-color: aliceblue;
+    border-style: solid;
+    padding: 10px;
+}
+
+
+.form-group:hover {
+    background-color: rgb(198, 235, 66);
 }
