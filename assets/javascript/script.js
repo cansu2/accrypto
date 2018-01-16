@@ -5,6 +5,8 @@ $(document).ready(function() {
     .removeClass("hidden");
 });
 
+
+
 $(document).on("click", "#search", function() {
 
      function playAudio() {
