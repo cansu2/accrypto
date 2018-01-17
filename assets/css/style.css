@@ -3,12 +3,18 @@ body {
 }
 
 .main-logo {
-    margin-top: 90px
+    margin-top: 90px;
+    width: 100%;
+    height: auto;
 }
 
 
 #searchbar {
     margin-top: 100px;
+}
+
+#searchbar2 {
+    margin-top: 50px;
 }
 
 .hidden {

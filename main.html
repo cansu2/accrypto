@@ -15,32 +15,44 @@
 <body>
 
     <div class="container">
-
-        <div class="row" id="searchbar" >
+        <div class="row" id="logo">
             <div class="col-lg-4"></div>
-            
-                <div class="col-lg-5">
-                    <div class="form-group" >
-                        <input type="text" class="form-control hidden" id="usr" placeholder="Find Your Currency">
-                        <button onclick="document.getElementById('sound1').play();" type="button" class="btn btn-warning center-block coin"> Search</button>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                   
-                </div>
-            
+            <div class="col-lg-5">
+                <img class="main-logo img-responsive animated rotateIn" id="logo" src="assets/images/Logo_Large.png" alt="Accrytpo">
+            </div>
+            <div class="col-lg-3"></div>
         </div>
-        <audio id="sound1" src="assets/sounds/smw_coin.wav" preload="auto"></audio>
 
+        <div class="row" id="searchbar2">
+            <div class="col-lg-4"></div>
+             <div class="col-lg-5">
+                <div class="form-group">
+                    <input type="text" class="form-control hidden" id="usr" placeholder="Find Your Currency">
+                    <button onclick="document.getElementById('sound1').play();" type="button" class="btn btn-warning center-block coin"> Search</button>
+                </div>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+        
 
-
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5 form-group"><p>Reddit API</p>
+              
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-4 form-group"><p>CryptoCurrency API</p></div>
+            <div class="col-sm-1"></div>
+        </div>
 
 
 
     </div>
 
+    <!-- Button Audio -->
+    <audio id="sound1" src="assets/sounds/smw_coin.wav" preload="auto"></audio>
 
-
+    <!-- Jquery and Vanilla JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/javascript/constants.js"></script>
     <script src="assets/javascript/script.js" type="text/javascript">
