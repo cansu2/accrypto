@@ -32,3 +32,10 @@ body {
 .form-group:hover {
     background-color: rgb(198, 235, 66);
 }
+
+footer {
+    height: 100px;
+    width: 100%;
+    background-color: rgb(37, 36, 36)
+    
+}
