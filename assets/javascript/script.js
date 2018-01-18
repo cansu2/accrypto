@@ -6,13 +6,14 @@ $(document).ready(function() {
 });
 
 $(document).on("click", "#search", function() {
+    $("audio")[0].play();
+      setTimeout(() => {
+        
+        window.location.href = "main.html";
+      }, 800);
+   
 
-     function playAudio() {
-      $("audio").play();
-    
-     }
-
-  window.location.href = "main.html";
+  
 });
 
 $(document).on("click", "#login", function() {
