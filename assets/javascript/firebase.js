@@ -8,3 +8,28 @@ var config = {
     messagingSenderId: "590295681869"
   };
   firebase.initializeApp(config);
+
+  const database = firebase.database();
+
+
+$(document).on('click', '#submit2', function(){
+
+    let firstName = $('#textinputFirst').val().trim();
+    let lastName = $('#textinputLast').val().trim();
+    let email = $('#textinputEmail').val().trim();
+    let password = $('#textinputPassword').val().trim();
+
+    var ref = database.ref();
+    var data = {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        password: password
+    };
+
+    console.log(firstName);
+    ref.push(data);
+
+    
+
+});
