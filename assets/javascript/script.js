@@ -18,24 +18,24 @@ $(document).on("click", ".searchClass", function(event) {
   event.preventDefault();
 
   var card = $('<div class="card">');
-  var cardBlock  = $('<div class="card-block">');
-  /**var header = $('<h6 class="card-subtitle mb-2 text-muted">');
-  header.text('NAME VAR FROM API');
-  var current = $('<p class="card-text" id="current">')
-  current.text('CURRENT VAR FROM API');
-  var hrChange24 = $('<p class="card-text" id="hrChange24">')
-  hrChange24.text('CHANGE VAR FROM API');**/
-  card.append(cardblock);
-  /**cardblock.append(header);
-  cardblock.append(current);
-  cardblock.append(hrChange24);**/
+  //var cardBlock  = $('<div class="card-block">');
+  //var header = $('<h6 class="card-subtitle mb-2 text-muted">');
+  //header.text('NAME VAR FROM API');
+  //var current = $('<p class="card-text" id="current">')
+  //current.text('CURRENT VAR FROM API');
+  //var hrChange24 = $('<p class="card-text" id="hrChange24">')
+  //hrChange24.text('CHANGE VAR FROM API');
+  //card.append(cardblock);
+  //cardblock.append(header);
+  //cardblock.append(current);
+  //cardblock.append(hrChange24);
   $('tbody').append(card);
 
 
   
 
   console.log(card);
-  console.log(cardBlock);
+  //console.log(cardBlock);
 
 });
 
