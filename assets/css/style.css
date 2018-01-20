@@ -3,12 +3,21 @@ body {
 }
 
 .main-logo {
-    margin-top: 90px
+    margin-top: 90px;
+    width: 100%;
+    height: auto;
 }
 
+.jumbotron{
+    background-color: rgb(52, 53, 51);
+}
 
 #searchbar {
     margin-top: 100px;
+}
+
+#searchbar2 {
+    margin-top: 50px;
 }
 
 .hidden {
@@ -25,4 +34,11 @@ body {
 
 .form-group:hover {
     background-color: rgb(198, 235, 66);
+}
+
+footer {
+    height: 100px;
+    width: 100%;
+    background-color: rgb(37, 36, 36)
+    
 }
