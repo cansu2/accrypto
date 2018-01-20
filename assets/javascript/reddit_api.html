@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Reddit Testing</title>
+</head>
+
+<body>
+  <button id="cat-button">Reddit</button>
+  <div id="images">
+  </div>
+
+  <div id="test">
+    <script src="https://www.reddit.com/r/CryptoCurrency/.embed?limit=5&t=all" type="text/javascript"></script>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    // Event listener for our cat-button
+    $("#cat-button").on("click", function() {
+
+      var queryURL = "https://reddit.com/api/v1/authorize?client_id=lxIhDFaPx_w0OoUqQaECcfaG3Pg&response_type=code&state=" + state + "&redirect_uri=https://www.google.com&duration=temporary&scope=mysubreddits
+
+
+      // var queryURL = "http://www.reddit.com/reddits.json/authorize?client_id=lxIhDFaPx_w0OoUqQaECcfaG3Pg&response_type=code&state=" + state + "&redirect_uri=https://www.google.com&duration=temporary&scope=mysubreddits";
+
+      // http://www.reddit.com/reddits.json
+
+      // var state = $("#searchbar").val().trim();
+      var state = "crytocurrency";
+
+
+      // Perfoming an AJAX GET request to our queryURL
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+
+      // After the data from the AJAX request comes back
+      .done(function(response) {
+        $("#test").append(response);
+        return url;
+        console.log(response);
+      });
+    });
+  </script>
+</body>
+
+</html>
