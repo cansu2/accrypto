@@ -42,4 +42,4 @@ $('div').on("click", "#logo", function() {
 
 
 
- 
+$('tbody').append('<tr><th scope="row">1</th><td>' + snapshot.name + '</td><td>' + snapshot.dest + '</td><td>' + snapshot.trainTime + '</td><td>' + snapshot.freq + '</td></tr>');

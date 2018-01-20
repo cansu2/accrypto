@@ -29,7 +29,7 @@
              <div class="col-lg-5">
                 <div class="form-group">
                     <input type="text" class="form-control hidden" id="searchForm" placeholder="Find Your Currency">
-                    <button id="search3" onclick="document.getElementById('sound1').play();" type="button" class="btn btn-warning center-block coin"> Search</button>
+                    <button id="search3" onclick="document.getElementById('sound1').play();" type="button" class="btn searchClass btn-warning center-block coin"> Search</button>
                 </div>
             </div>
             <div class="col-lg-3"></div>
@@ -42,7 +42,25 @@
                 <div class="form-group">hello</div><br>
                 <div class="form-group">hello2</div>
             </div>
-            <div class="col-sm-5 form-group"><p>CryptoCurrency API</p></div>
+            <div class="col-sm-5 form-group"><p>CryptoCurrency API</p>
+                <tbody>
+
+                <div class="card">
+                    <div class="card-block">
+                      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                      <p class="card-text">Current</p>
+                      <p class="card-text" id="current"></p>
+                      <p class="card-text">Last Week</p>
+                      <p class="card-text" id="lastWeek"></p>
+                      <p class="card-text">Top Price</p>
+                      <p class="card-text" id="topPrice"></p>
+                      <a href="#" class="card-link" id="link">Link</a>
+                    </div>
+                </div>
+
+                
+                </tbody>
+            </div>
             <div class="col-sm-1"></div>
         </div>
     </div>
