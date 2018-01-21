@@ -1,3 +1,34 @@
+/** *********************************
+
+                         ,.
+                        (_|,.
+                       ,' /, )_______   _
+                    __j o``-'        `.'-)'
+    ACCRYPTO!      (")         $$      \'
+                    `-j                |
+                      `-._(           /
+                         |_\  |  ^.  /
+                        /_]'|_| /_)_/
+                           /_]'  /_]'
+
+Name: accrypto.html
+Created by: DU Coding Academy, Group 5, 
+            project 1
+Date: 1/15/17
+Copyright: Open for all use
+URL: https://github.com/cansu2/accrypto
+
+Links: constants.js, 
+       main.html, index.html
+
+Propose: The porpose of this file is to serve 
+        as general linking file for most generic 
+        html and js links that involve style. It 
+        also serves as a conduit to link AJAX calls 
+        to main.html.
+
+*********************************** **/
+
 $(document).ready(function() {
   //jquery method for fading in the search bar on search screen
   $(".hidden")
