@@ -46,9 +46,13 @@ $(document).on("click", "#search", function() {
 
 $(document).on("click", ".searchClass", function(event) {
 
+  var name = 'Tester';
+  var price = 34;
+  var hrChange24 = 23
+
   event.preventDefault();
 
-  var card = $('<div class="card">');
+  //var card = $('<div class="card">');
   //var cardBlock  = $('<div class="card-block">');
   //var header = $('<h6 class="card-subtitle mb-2 text-muted">');
   //header.text('NAME VAR FROM API');
@@ -60,12 +64,15 @@ $(document).on("click", ".searchClass", function(event) {
   //cardblock.append(header);
   //cardblock.append(current);
   //cardblock.append(hrChange24);
-  $('tbody').append(card);
+  //$('tbody').append(card);
 
-
+ $("#card-body").append('<div class="card"><div class="card-block"><h4 class="card-subtitle mb-2 text-muted">'
+  + name + "</h4><p class='card-text cardtext'>Current Price</p><p class='card-text cardtext' id='current'>$"
+  + price + "</p><p class='card-text cardtext'>Last 24 Hours</p><p class='card-text cardtext' id='lastWeek'>"
+  + hrChange24 + "%</p>");
   
 
-  console.log(card);
+  console.log(price);
   //console.log(cardBlock);
 
 });

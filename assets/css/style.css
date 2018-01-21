@@ -2,6 +2,10 @@ body {
     background-color: black;
 }
 
+h4 {
+    margin-top: 10px;
+}
+
 .main-logo {
     margin-top: 90px;
     width: 100%;
@@ -20,8 +24,30 @@ body {
     margin-top: 50px;
 }
 
+#crypto-header{
+    font-family: 'Joti One', cursive;
+    font-size: 20px;
+    text-align: center;
+}
+
 .hidden {
     display: none;
+    
+}
+
+.card {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(198, 235, 66);
+}
+
+.cardtext {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
 }
 
 .form-group {
@@ -33,7 +59,7 @@ body {
 
 
 .form-group:hover {
-    background-color: rgb(198, 235, 66);
+    background-color: rgb(83, 83, 82);
 }
 
 footer {
