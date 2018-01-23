@@ -190,32 +190,6 @@ var hrChange24 = response.Data.AggregatedData.LOW24HOUR
 });
 
 
-
-
-
-<<<<<<< HEAD
-=======
-$(document).on("click", ".apiLink", function(event) {
-var clickedCurr = $(this).attr("data-currencyName")
-console.log(clickedCurr);
-
-//api call to cansu
-
-$("#card-body2").append('<div class="card"><div class="card-block"><h4 data-currencyName='
- +searchVar+ ' class="card-subtitle mb-2 text-muted apiLink">'
-  + searchVar + "</h4><p class='card-text cardtext'>Current Price</p><p class='card-text cardtext' id='current'>$"
-  + price + "</p><p class='card-text cardtext'>Last 24 Hours</p><p class='card-text cardtext' id='lastWeek'>"
-  + hrChange24 + '%</p><button class="removeMe btn btn-danger">Delete</button>');
-
-});
-
-$(document).on("click", ".remove", function(event) {
-      console.log($(this).parent(), 'removed this card');
-      $(this).parent().parent().remove();
-
-});
-
-
 // news div javascript
 
 
