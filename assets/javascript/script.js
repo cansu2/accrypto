@@ -12,19 +12,19 @@
                            /_]'  /_]'
 
 Name: accrypto.html
-Created by: DU Coding Academy, Group 5, 
+Created by: DU Coding Academy, Group 5,
             project 1
 Date: 1/15/17
 Copyright: Open for all use
 URL: https://github.com/cansu2/accrypto
 
-Links: constants.js, 
+Links: constants.js,
        main.html, index.html
 
-Propose: The porpose of this file is to serve 
-        as general linking file for most generic 
-        html and js links that involve style. It 
-        also serves as a conduit to link AJAX calls 
+Propose: The porpose of this file is to serve
+        as general linking file for most generic
+        html and js links that involve style. It
+        also serves as a conduit to link AJAX calls
         to main.html.
 
 *********************************** **/
@@ -41,63 +41,149 @@ jQuery.ajaxPrefilter(function(options) {
   }
 });
 
-//dynamic click function that allows user to clikc to main.html 
+//dynamic click function that allows user to clikc to main.html
 $(document).on("click", "#search", function() {
     $("audio")[0].play();
       setTimeout(() => {
          window.location.href = "main.html";
-        
+
       }, 800);
-     
+
 });
 
-//dynamic click function that allows user to click logo to go to index.html 
+//dynamic click function that allows user to click logo to go to index.html
 $("div").on("click", "#logo", function() {
   $("audio")[0].play();
   setTimeout(() => {
-    
+
   }, 800);
   window.location.href = "index.html";
 });
 
-//dynamic click function that takes info from the coincompare API and loads it into dynamic 
-//cards on the main.html page 
+//dynamic click function that takes info from the coincompare API and loads it into dynamic
+//cards on the main.html page
 $(document).on("click", ".searchClass", function(event) {
 
   event.preventDefault();
   var searchVar = $("#searchForm").val().trim();
   var price;
-  var hrChange24; 
+  var hrChange24;
   var coinAbbrev;
 
   switch(searchVar.toLowerCase()){
     case 'bitcoin':
     coinAbbrev = 'BTC';
     break;
-    case 'ethereum':
+    case 'etherium':
     coinAbbrev = 'ETH';
     break;
-
+    case 'litecoin':
+    coinAbbrev = 'LTC';
+    break;
+    case 'ripple':
+    coinAbbrev = 'XRP';
+    break;
+    case 'cardano':
+    coinAbbrev = 'ADA';
+    break;
+    case 'monero':
+    coinAbbrev = 'XMR';
+    break;
+    case 'neo':
+    coinAbbrev = 'NEO';
+    break;
+    case 'nem':
+    coinAbbrev = 'XEM';
+    break;
+    case 'stellar':
+    coinAbbrev = 'XLM';
+    break;
+    case 'eos':
+    coinAbbrev = 'EOS';
+    break;
+    case 'tron':
+    coinAbbrev = 'TRX';
+    break;
+    case 'icon':
+    coinAbbrev = 'ICX';
+    break;
+    case 'tether':
+    coinAbbrev = 'USDT';
+    break;
+    case 'lisk':
+    coinAbbrev = 'LSK';
+    break;
+    case 'qtum':
+    coinAbbrev = 'QTUM';
+    break;
+    case 'bytecoin':
+    coinAbbrev = 'BCN';
+    break;
+    case 'status':
+    coinAbbrev = 'SNT';
+    break;
+    case 'bitshares':
+    coinAbbrev = 'BTS';
+    break;
+    case 'ox':
+    coinAbbrev = 'ZRX';
+    break;
+    case 'zcoin':
+    coinAbbrev = 'XZC';
+    break;
+    case 'zclassic':
+    coinAbbrev = 'ZCL';
+    break;
+    case 'bancor':
+    coinAbbrev = 'BNT';
+    break;
+    case 'bitcore':
+    coinAbbrev = 'BTX';
+    break;
+    case 'digixdao':
+    coinAbbrev = 'DGD';
+    break;
+    case 'gas':
+    coinAbbrev = 'GAS';
+    break;
+    case 'decred':
+    coinAbbrev = 'DCR';
+    break;
+    case 'veritaseum':
+    coinAbbrev = 'VERI';
+    break;
+    case 'zcash':
+    coinAbbrev = 'ZEC';
+    break;
 
     default: '';
-    } 
+    }
  console.log(coinAbbrev);
-
  $.ajax({
-  url: "https://www.cryptocompare.com/api/data/coinsnapshot/?fsym=BTC&tsym=USD",
+   url: "https://www.cryptocompare.com/api/data/coinsnapshot/?fsym="+coinAbbrev+"&tsym=USD",
   method: "GET"
 })
 .then(function(response){
   console.log(response)
+  var newP = $("<p>")
+  newP.text(response.USD)
+  console.log(response.Data.AggregatedData.PRICE);
+   console.log(response.Data.AggregatedData.LOW24HOUR);
+var price = response.Data.AggregatedData.PRICE
+var hrChange24 = response.Data.AggregatedData.LOW24HOUR
+
+
+
+
   //check for CORE issures, chrome ext, or cores anywhere heroku
 
 
- $("#card-body").append('<div class="card"><div class="card-block"><h4 data-currencyName=' 
+ $("#card-body").prepend('<div class="card"><div class="card-block"><h4 data-currencyName='
  +searchVar+ ' class="card-subtitle mb-2 text-muted apiLink">'
   + searchVar + "</h4><p class='card-text cardtext'>Current Price</p><p class='card-text cardtext' id='current'>$"
-  + price + "</p><p class='card-text cardtext'>Last 24 Hours</p><p class='card-text cardtext' id='lastWeek'>"
-  + hrChange24 + "%</p>");
-  
+  + price + "</p><p class='card-text cardtext'>Lowest in last 24 Hours</p><p class='card-text cardtext' id='lastWeek'>$"
+  + hrChange24 + "</p>");
+
   console.log(price);
  })
 });
@@ -113,7 +199,7 @@ console.log(clickedCurr);
 
 //api call to cansu
 
-$("#card-body2").append('<div class="card"><div class="card-block"><h4 data-currencyName=' 
+$("#card-body2").append('<div class="card"><div class="card-block"><h4 data-currencyName='
  +searchVar+ ' class="card-subtitle mb-2 text-muted apiLink">'
   + searchVar + "</h4><p class='card-text cardtext'>Current Price</p><p class='card-text cardtext' id='current'>$"
   + price + "</p><p class='card-text cardtext'>Last 24 Hours</p><p class='card-text cardtext' id='lastWeek'>"
@@ -139,12 +225,3 @@ $("#card-body2").append('<div class="card"><div class="card-block"><h4 data-curr
 
   window.location.href = "signup.html";
 });**/
-
-
-
-
-
-
-
-
-
