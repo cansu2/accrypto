@@ -1,4 +1,33 @@
 <!DOCTYPE html>
+<!--***********************************
+
+                         ,.
+                        (_|,.
+                       ,' /, )_______   _
+                    __j o``-'        `.'-)'
+    ACCRYPTO!      (")                 \'
+                    `-j       $$       |
+                      `-._(           /
+                         |_\  |  ^.  /
+                        /_]'|_| /_)_/
+                           /_]'  /_]'
+
+Name: Index.html
+Created by: DU Coding Academy, Group 5, 
+            project 1
+Date: 1/15/17
+Copyright: Open for all use
+URL: https://github.com/cansu2/accrypto
+
+Links: style.css, accrypto.js, constants.js, 
+       main.html, login.html, signup.html
+
+Propose: The porpose of this page is to serve 
+        as the html when opening the site. It 
+        opens to the users main page. It also 
+        serves as the initial searchba
+
+*************************************-->
 <html lang="en">
 
 <head>
@@ -7,11 +36,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.2/darkly/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Joti+One|Playfair+Display" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
     <title>Accrypto Search</title>
- 
+
 </head>
 
 <body class="hidden">
@@ -19,50 +50,51 @@
 
     <div class="container">
         <div class="row" id="logo">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4">
-                <img class="main-logo img-responsive animated rollIn" id="logo" src="assets/images/Logo_Large.png" alt="Accrytpo">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-5">
+                <img class="main-logo img-responsive animated rotateIn" id="logo" src="assets/images/Logo_Large.png" alt="Accrytpo">
             </div>
-            <div class="col-sm-4"></div>
+            <div class="col-lg-3"></div>
         </div>
+
         <div class="row" id="searchbar">
             <div class="col-sm-4"></div>
             <div class="col-sm-5">
-                    <div class="form-group-index">                           
-                            <input type="text" class="form-control hidden" id="usr" placeholder="Find Your Currency">
-                    </div>
+                <div class="form-group-index">
+                    <input type="text" class="form-control hidden" id="usr searchForm" placeholder="Find Your Currency">
+                </div>
             </div>
             <div class="col-sm-3">
-                <button type="button" onclick="document.getElementById('sound1').play();" id="search" class="btn btn-outline-warning center-block animated rollIn coin">Search</button>
+                <button type="button" id="search" class="btn btn-outline-warning searchClass center-block animated rotateIn coin">Search</button>
             </div>
         </div>
-                <div class="row">
-                    <div class="col-sm-5"></div>
-                    <div class="col-sm-3"><br>
-                    <button type="button" id="login" class="btn btn-outline-light">Login</button>&nbsp;&nbsp;
-                    <button type="button" id="signup" class="btn btn-outline-light">Sign Up</button>
-                    </div>
-                    <div class="col-sm-4"></div>
-                </div>
-        
 
-
-
-
-
-
+        <div class="row">
+            <div class="col-sm-5"></div>
+            <div class="col-sm-3">
+                <br>
+                <!--div class="btn-group">
+                <button type="button" id="login" class="btn btn-outline-light animated rotateIn">Login</button>&nbsp;&nbsp;
+                <button type="button" id="signup" class="btn btn-outline-light animated rotateIn">Sign Up</button>
+                </div-->
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
     </div>
 
-    
+
+
     <audio id="sound1" src="assets/sounds/smw_coin.wav" preload="auto"></audio>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/javascript/constants.js"></script>
     <script src="assets/javascript/script.js" type="text/javascript"></script>
+    <script src="assets/javascript/accrypto.js"></script>
+    <script src="assets/javascript/firebase.js" charset="utf-8"></script>
 
-   
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
         crossorigin="anonymous"></script>
-  
+
 </body>
 
 </html>
