@@ -28,6 +28,13 @@ Propose: The porpose of this file is to serve
 
 *********************************** **/
 
+jQuery.ajaxPrefilter(function(options) {
+  if (options.crossDomain && jQuery.support.cors) {
+      options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+  }
+});
+
+
 $("#etherium").on("click",function(){
   $.ajax({
   url: "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=BTC,USD,EUR",
@@ -68,12 +75,12 @@ $("#bitcoin").on("click",function(){
 
 
 $.ajax({
-  url: "https://min-api.cryptocompare.com/data/histominute?fsym=BTC&tsym=USD&limit=60&aggregate=3&e=CCCAGG",
+  url: "https://www.cryptocompare.com/api/data/coinsnapshot/?fsym=BTC&tsym=USD",
   method: "GET"
 })
 .then(function(response){
   console.log(response)
-
+  //check for CORE issures, chrome ext, or cores anywhere heroku
 })
 
 
