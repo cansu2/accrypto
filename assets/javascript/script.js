@@ -69,6 +69,7 @@ $(document).on("click", ".searchClass", function(event) {
   var price;
   var hrChange24; 
   var coinAbbrev;
+ 
 
   switch(searchVar.toLowerCase()){
     case 'bitcoin':
@@ -88,18 +89,19 @@ $(document).on("click", ".searchClass", function(event) {
   method: "GET"
 })
 .then(function(response){
-  console.log(response)
+  console.log(response);
   //check for CORE issures, chrome ext, or cores anywhere heroku
 
 
- $("#card-body").append('<div class="card"><div class="card-block"><h4 data-currencyName=' 
+
+ $("#card-body").prepend('<div class="card"><div class="card-block"><h4 data-currencyName=' 
  +searchVar+ ' class="card-subtitle mb-2 text-muted apiLink">'
   + searchVar + "</h4><p class='card-text cardtext'>Current Price</p><p class='card-text cardtext' id='current'>$"
   + price + "</p><p class='card-text cardtext'>Last 24 Hours</p><p class='card-text cardtext' id='lastWeek'>"
-  + hrChange24 + "%</p>");
+  + hrChange24 + "%</p><button class='remove btn btn-danger'>Remove</button>");
   
-  console.log(price);
- })
+  console.log(this.attr('data-id'));
+ 
 });
 
 
@@ -107,7 +109,6 @@ $(document).on("click", ".searchClass", function(event) {
 
 
 $(document).on("click", ".apiLink", function(event) {
-
 var clickedCurr = $(this).attr("data-currencyName")
 console.log(clickedCurr);
 
@@ -117,7 +118,13 @@ $("#card-body2").append('<div class="card"><div class="card-block"><h4 data-curr
  +searchVar+ ' class="card-subtitle mb-2 text-muted apiLink">'
   + searchVar + "</h4><p class='card-text cardtext'>Current Price</p><p class='card-text cardtext' id='current'>$"
   + price + "</p><p class='card-text cardtext'>Last 24 Hours</p><p class='card-text cardtext' id='lastWeek'>"
-  + hrChange24 + "%</p>");
+  + hrChange24 + '%</p><button class="removeMe btn btn-danger">Delete</button>');
+
+});
+
+$(document).on("click", ".remove", function(event) {
+      console.log($(this).parent(), 'removed this card');
+      $(this).parent().parent().remove();
 
 });
 
