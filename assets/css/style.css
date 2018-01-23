@@ -62,6 +62,22 @@ h4 {
     background-color: rgb(83, 83, 82);
 }
 
+/*news div*/
+
+#title-news{
+    font-size:17px;
+}
+
+#parag-news{
+    font-size:14px;
+}
+
+#link-news{
+    font-size:12px;
+}
+
+/*news div*/
+
 footer {
     height: 100px;
     width: 100%;

@@ -191,6 +191,8 @@ var hrChange24 = response.Data.AggregatedData.LOW24HOUR
 
 //cansu
 
+<<<<<<< HEAD
+=======
 $(document).on("click", ".apiLink", function(event) {
   
   var clickedCurr = $(this).attr("data-currencyName")
@@ -255,20 +257,57 @@ $(document).on("click", ".apiLink", function(event) {
 // });
 
 
+// news div javascript
 
 
-/**$(document).on("click", "#login", function() {
-  function playAudio() {
-    $("audio").play();
-  }
 
-  window.location.href = "login.html";
-});**/
+$(document).on("click", ".apiLink", function(event) {
 
-/**$(document).on("click", "#signup", function() {
-  function playAudio() {
-    $("audio").play();
-  }
+var clickedCurr = $(this).attr("data-currencyName")
+console.log(clickedCurr);
 
-  window.location.href = "signup.html";
-});**/
+var queryURL = "https://newsapi.org/v2/everything?q=" + clickedCurr + 
+  "&apiKey=bcd8c23712344119ae60db38b2b3d1cd";
+
+  $.ajax({
+          url: queryURL,
+          method: "GET"
+        })
+
+   .done(function(response) {
+       console.log(queryURL); 
+
+       var arrayTitles =[];
+
+       for (var i = 1; i < 3; i++){
+
+            var time  = response.articles[i].publishedAt;
+
+            var date = new Date((time || "").replace(/-/g,"/").replace(/[TZ]/g," "));
+
+            var newDate = String(date).substr(4,11);
+
+            arrayTitles.push(response.articles[i].title); 
+
+            var title = response.articles[i].title + newDate;
+
+            $("#card-body2").prepend('<div id="news"><h3 id="title-news">' + title + '</h3><p id="parag-news">' +response.articles[i].description +
+            '</p><a href="link-news">' +response.articles[i].url+ '</a></div>');
+
+          }
+
+     })
+
+});
+
+
+
+
+// news div javascript
+
+
+
+
+
+
+
