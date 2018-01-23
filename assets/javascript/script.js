@@ -55,9 +55,9 @@ $(document).on("click", "#search", function() {
 $("div").on("click", "#logo", function() {
   $("audio")[0].play();
   setTimeout(() => {
-
+    window.location.href = "index.html";
   }, 800);
-  window.location.href = "index.html";
+  
 });
 
 //dynamic click function that takes info from the coincompare API and loads it into dynamic
@@ -66,7 +66,6 @@ $(document).on("click", ".searchClass", function(event) {
 
   event.preventDefault();
   var searchVar = $("#searchForm").val().trim();
-  var price;
   var hrChange24;
   var coinAbbrev;
 
@@ -191,8 +190,7 @@ var hrChange24 = response.Data.AggregatedData.LOW24HOUR
 
 //cansu
 
-<<<<<<< HEAD
-=======
+
 $(document).on("click", ".apiLink", function(event) {
   
   var clickedCurr = $(this).attr("data-currencyName")
