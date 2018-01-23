@@ -30,9 +30,9 @@ Propose: The porpose of this file is to serve
 *********************************** **/
  //jquery method for fading in the search bar on search screen
 $(document).ready(function() {
-  /**$(".hidden")
+  $(".hidden")
     .fadeIn(2000)
-    .removeClass("hidden");**/
+    .removeClass("hidden");
 });
 
 jQuery.ajaxPrefilter(function(options) {
@@ -43,20 +43,20 @@ jQuery.ajaxPrefilter(function(options) {
 
 //dynamic click function that allows user to clikc to main.html 
 $(document).on("click", "#search", function() {
-    /**$("audio")[0].play();
+    $("audio")[0].play();
       setTimeout(() => {
+         window.location.href = "main.html";
         
-        
-      }, 800);**/
-      window.location.href = "main.html";
+      }, 800);
+     
 });
 
 //dynamic click function that allows user to click logo to go to index.html 
 $("div").on("click", "#logo", function() {
-  /**$("audio")[0].play();
+  $("audio")[0].play();
   setTimeout(() => {
     
-  }, 800);**/
+  }, 800);
   window.location.href = "index.html";
 });
 
@@ -92,7 +92,8 @@ $(document).on("click", ".searchClass", function(event) {
   //check for CORE issures, chrome ext, or cores anywhere heroku
 
 
- $("#card-body").append('<div class="card"><div class="card-block"><h4 data-currencyName=' +searchVar+ ' class="card-subtitle mb-2 text-muted apiLink">'
+ $("#card-body").append('<div class="card"><div class="card-block"><h4 data-currencyName=' 
+ +searchVar+ ' class="card-subtitle mb-2 text-muted apiLink">'
   + searchVar + "</h4><p class='card-text cardtext'>Current Price</p><p class='card-text cardtext' id='current'>$"
   + price + "</p><p class='card-text cardtext'>Last 24 Hours</p><p class='card-text cardtext' id='lastWeek'>"
   + hrChange24 + "%</p>");
@@ -101,12 +102,22 @@ $(document).on("click", ".searchClass", function(event) {
  })
 });
 
+
+
+
+
 $(document).on("click", ".apiLink", function(event) {
 
 var clickedCurr = $(this).attr("data-currencyName")
 console.log(clickedCurr);
 
 //api call to cansu
+
+$("#card-body2").append('<div class="card"><div class="card-block"><h4 data-currencyName=' 
+ +searchVar+ ' class="card-subtitle mb-2 text-muted apiLink">'
+  + searchVar + "</h4><p class='card-text cardtext'>Current Price</p><p class='card-text cardtext' id='current'>$"
+  + price + "</p><p class='card-text cardtext'>Last 24 Hours</p><p class='card-text cardtext' id='lastWeek'>"
+  + hrChange24 + "%</p>");
 
 });
 
