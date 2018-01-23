@@ -104,6 +104,73 @@ $('div').on("click", "#logo", function() {
 });
 
 
+// news div javascript
+
+$("#current").on("click", function(){
+  var crytocurrency = "current" + searchVar;
+
+  var queryURL = "https://newsapi.org/v2/everything?q=" + cryptocurrency + 
+  "&apiKey=bcd8c23712344119ae60db38b2b3d1cd";
+
+   $.ajax({
+          url: queryURL,
+          method: "GET"
+        })
+
+   .done(function(response) {
+       console.log(queryURL);
+
+       var arrayTitles =[];
+        
+          for (var i = 1; i < 10; i++){
+
+            var time  = response.articles[i].publishedAt;
+
+            var date = new Date((time || "").replace(/-/g,"/").replace(/[TZ]/g," "));
+
+            var newDate = String(date).substr(4,11);
+
+            arrayTitles.push(response.articles[i].title);
+
+            $("#news").text(response.articles[i].title + response.articles[i].description+ 
+              response.articles[i].url)
+
+            var title = $('<h3 id="title-new">').text(response.articles[i].title);
+
+            var parag = $('<p id="parag-news">').text(response.articles[i].description);
+
+            var link = $('<a id="link-news">').text(response.articles[i].url);
+
+
+
+          }
+     });
+});
+
+// Matt's way 
+
+$(document).on("click", ".apiLink", function(event) {
+
+var clickedCurr = $(this).attr("data-currencyName")
+console.log(clickedCurr);
+
+//api call to cansu
+
+$("#card-body2").append('<div class="card"><div class="card-block"><h4 data-currencyName='
+ +searchVar+ ' class="card-subtitle mb-2 text-muted apiLink">'
+  + searchVar + "</h4><p class='card-text cardtext'>Current Price</p><p class='card-text cardtext' id='current'>$"
+  + price + "</p><p class='card-text cardtext'>Last 24 Hours</p><p class='card-text cardtext' id='lastWeek'>"
+  + hrChange24 + "%</p>");
+
+
+
+});
+
+
+
+
+// news div javascript
+
 
 
 
