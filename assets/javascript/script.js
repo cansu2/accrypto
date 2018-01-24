@@ -170,8 +170,8 @@ $(document).on("click", ".searchClass", function(event) {
   newP.text(response.USD)
   console.log(response.Data.AggregatedData.PRICE);
    console.log(response.Data.AggregatedData.LOW24HOUR);
-var price = response.Data.AggregatedData.PRICE
-var hrChange24 = response.Data.AggregatedData.LOW24HOUR
+   var price = response.Data.AggregatedData.PRICE
+   var hrChange24 = response.Data.AggregatedData.LOW24HOUR
 
 
 
@@ -190,14 +190,36 @@ var hrChange24 = response.Data.AggregatedData.LOW24HOUR
 });
 
 
+// $(document).on("click", ".apiLink", function(event) {
+// var clickedCurr = $(this).attr("data-currencyName")
+// console.log(clickedCurr);
+
+//api call to cansu
+
+// $("#card-body2").append('<div class="card"><div class="card-block"><h4 data-currencyName='
+//  +searchVar+ ' class="card-subtitle mb-2 text-muted apiLink">'
+//   + searchVar + "</h4><p class='card-text cardtext'>Current Price</p><p class='card-text cardtext' id='current'>$"
+//   + price + "</p><p class='card-text cardtext'>Last 24 Hours</p><p class='card-text cardtext' id='lastWeek'>"
+//   + hrChange24 + '%</p><button class="removeMe btn btn-danger">Delete</button>');
+
+// });
+
+// $(document).on("click", ".remove", function(event) {
+//       console.log($(this).parent(), 'removed this card');
+//       $(this).parent().parent().remove();
+
+// });
+
+
 // news div javascript
 
-
+//cansu
 
 $(document).on("click", ".apiLink", function(event) {
 
 var clickedCurr = $(this).attr("data-currencyName")
 console.log(clickedCurr);
+console.log("Cansu");
 
 var queryURL = "https://newsapi.org/v2/everything?q=" + clickedCurr + 
   "&apiKey=bcd8c23712344119ae60db38b2b3d1cd";
@@ -212,7 +234,7 @@ var queryURL = "https://newsapi.org/v2/everything?q=" + clickedCurr +
 
        var arrayTitles =[];
 
-       for (var i = 1; i < 3; i++){
+       for (var i = 1; i < 4; i++){
 
             var time  = response.articles[i].publishedAt;
 
@@ -222,10 +244,10 @@ var queryURL = "https://newsapi.org/v2/everything?q=" + clickedCurr +
 
             arrayTitles.push(response.articles[i].title); 
 
-            var title = response.articles[i].title + newDate;
+            var title = response.articles[i].title
 
-            $("#card-body2").prepend('<div id="news"><h3 id="title-news">' + title + '</h3><p id="parag-news">' +response.articles[i].description +
-            '</p><a href="link-news">' +response.articles[i].url+ '</a></div>');
+            $(".card-body2").prepend('<br><div id="news"><h3 id="title-news">' + title + '</h3><h3 id ="date">'+ " " + newDate+'</h3><p id="parag-news">' +response.articles[i].description +
+            '</p><a href="link-news" id="link-news">'+response.articles[i].url+ '</a></div>');
 
           }
 
@@ -233,7 +255,7 @@ var queryURL = "https://newsapi.org/v2/everything?q=" + clickedCurr +
 
 });
 
-
+//cansu
 
 
 // news div javascript
