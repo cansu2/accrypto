@@ -48,7 +48,7 @@ $(document).on("click", "#search", function() {
          window.location.href = "main.html";
          //indexSearch = $('#usr')
          //indexSearch.text('#searchform');
-      }, 800);
+      }, 4800);
 
 });
 
