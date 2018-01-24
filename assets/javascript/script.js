@@ -46,7 +46,8 @@ $(document).on("click", "#search", function() {
     $("audio")[0].play();
       setTimeout(() => {
          window.location.href = "main.html";
-
+         //indexSearch = $('#usr')
+         //indexSearch.text('#searchform');
       }, 800);
 
 });
