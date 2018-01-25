@@ -1,5 +1,5 @@
 body {
-    background-color: black;
+    background-color: 	#000000;
 }
 
 h4 {
@@ -7,13 +7,12 @@ h4 {
 }
 
 .main-logo {
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 90px;
     width: 100%;
     height: auto;
-}
-
-.jumbotron{
-    background-color: rgb(52, 53, 51);
+   
 }
 
 #searchbar {
@@ -40,7 +39,7 @@ h4 {
     padding-left: 10px;
     padding-bottom: 20px;
     margin-bottom: 10px;
-    border-width: 1px;
+    border-width: 2px;
     border-style: solid;
     border-color: rgb(198, 235, 66);
 }
@@ -85,11 +84,66 @@ h4 {
     color:#A8A8A8 ;
 }
 
-/*news div*/
 
 footer {
     height: 100px;
     width: 100%;
     background-color: rgb(37, 36, 36)
     
+}
+
+/* test for the dynamic buttons*/
+
+.button {
+  background: #2B2D2F;
+  height: 60px;
+  width: 150px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.text {
+  font: bold 1.25rem/1 poppins;
+  color: #71DFBE;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-52%);
+  left: 0;
+  right: 0;
+}
+
+.progress-bar {
+  position: absolute;
+  height: 20px;
+  width: 0;
+  right: 0;
+  top: 50%;
+  left: 50%;
+  border-radius: 200px;
+  transform: translateY(-50%) translateX(-50%);
+  background: lighten(#2B2D2F, 15%);
+}
+
+svg {
+  width: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  left: 50%;
+  right: 0;
+}
+
+.check {
+  fill: none;
+  stroke: #FFFFFF;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }

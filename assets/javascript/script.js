@@ -46,8 +46,9 @@ $(document).on("click", "#search", function() {
     $("audio")[0].play();
       setTimeout(() => {
          window.location.href = "main.html";
-
-      }, 800);
+         //indexSearch = $('#usr')
+         //indexSearch.text('#searchform');
+      }, 4800);
 
 });
 
@@ -55,9 +56,9 @@ $(document).on("click", "#search", function() {
 $("div").on("click", "#logo", function() {
   $("audio")[0].play();
   setTimeout(() => {
-
+    window.location.href = "index.html";
   }, 800);
-  window.location.href = "index.html";
+  
 });
 
 //dynamic click function that takes info from the coincompare API and loads it into dynamic
@@ -66,7 +67,6 @@ $(document).on("click", ".searchClass", function(event) {
 
   event.preventDefault();
   var searchVar = $("#searchForm").val().trim();
-  var price;
   var hrChange24;
   var coinAbbrev;
 
@@ -190,11 +190,58 @@ $(document).on("click", ".searchClass", function(event) {
 });
 
 
+$(document).on("click", ".apiLink", function(event) {
+  
+  var clickedCurr = $(this).attr("data-currencyName")
+  console.log(clickedCurr);
+  
+  var queryURL = "https://newsapi.org/v2/everything?q=" + clickedCurr + 
+    "&apiKey=bcd8c23712344119ae60db38b2b3d1cd";
+  
+    $.ajax({
+            url: queryURL,
+            method: "GET"
+          })
+  
+     .done(function(response) {
+         console.log(queryURL); 
+  
+         var arrayTitles =[];
+  
+         for (var i = 1; i < 3; i++){
+  
+              var time  = response.articles[i].publishedAt;
+  
+              var date = new Date((time || "").replace(/-/g,"/").replace(/[TZ]/g," "));
+  
+              var newDate = String(date).substr(4,11);
+  
+              arrayTitles.push(response.articles[i].title); 
+  
+              var title = response.articles[i].title + newDate;
+  
+              $("#card-body2").prepend('<div id="news"><h3 id="title-news">' + title + '</h3><p id="parag-news">' +response.articles[i].description +
+              '</p><a href="link-news">' +response.articles[i].url+ '</a></div>');
+  
+            }
+  
+       })
+  
+  });
+  
+  //cansu
+
+
+
+
 // $(document).on("click", ".apiLink", function(event) {
 // var clickedCurr = $(this).attr("data-currencyName")
 // console.log(clickedCurr);
 
-//api call to cansu
+
+
+// //api call to cansu
+
 
 // $("#card-body2").append('<div class="card"><div class="card-block"><h4 data-currencyName='
 //  +searchVar+ ' class="card-subtitle mb-2 text-muted apiLink">'
