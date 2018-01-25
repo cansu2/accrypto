@@ -54,42 +54,55 @@ Propose: The porpose of this page is to serve
         </div>
         <!-- Searchbar -->
         <div class="row" id="searchbar2">
-            <div class="col-lg-4"></div>
-             <div class="col-lg-5">
-                <div class="form-group">
-                    <input type="text" class="form-control hidden" id="searchForm" placeholder="Find Your Currency"></div>
-                    <button id="search3" onclick="document.getElementById('sound1').play();" type="button" class="btn searchClass btn-warning coin"> Search</button>
+            <div class="col-lg-3"></div>
+            <div class="col-lg-7">
+                <div class="form-group search-forms">
+                    <input type="text" class="form-control hidden" id="searchForm" placeholder="Find Your Currency">
+                    <button id="search3" onclick="document.getElementById('sound1').play();" type="button" class="btn searchClass btn-warning coin">
+                        Search</button>
+                    
+
+                </div>
+                <div class="alert alert-danger alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    Sorry! This is not a CryptoCurrency supported by Accrypto.
                 </div>
             </div>
-            <div class="col-lg-3"></div>
+            
         </div>
-        </br> </br>
-        <!-- Static Main Reddit API -->
-        <div class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-5">
-                <div class="form-group">
+        <div class="col-lg-2"></div>
+    </div>
+    </br>
+    </br>
+    <!-- Static Main Reddit API -->
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-5">
+            <div class="form-group">
 
                 <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h3>news from world wide</h3>
-                            </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>news from world wide</h3>
                         </div>
-                        <div class="card-body2">
-                        </div>
-                    </div>    
+                    </div>
+                    <div class="card-body2">
+                    </div>
+                </div>
 
-                <script src="https://www.reddit.com/r/CryptoCurrency/.embed?limit=5&t=all" type="text/javascript"></script></div><br>
-
-
-
+                <script src="https://www.reddit.com/r/CryptoCurrency/.embed?limit=5&t=all" type="text/javascript"></script>
             </div>
-            <div id="crypto-header" class="col-sm-5 form-group"><p>CryptoCurrency API</p>
-                <div id="card-body"></div>
-            </div>
-            <div class="col-sm-1"></div>
+            <br>
+
+
+
         </div>
+        <div id="crypto-header" class="col-sm-5 form-group">
+            <p>CryptoCurrency API</p>
+            <div id="card-body"></div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
     </div>
 
     <div class="container-fluid">
