@@ -177,7 +177,7 @@ $(document).on("click", ".searchClass", function(event) {
 
 
   //check for CORE issures, chrome ext, or cores anywhere heroku
-
+ 
 
  $("#card-body").prepend('<div class="card"><div class="card-block"><h4 data-currencyName='
  +searchVar+ ' class="card-subtitle mb-2 text-muted apiLink">'
@@ -217,9 +217,10 @@ $(document).on("click", ".searchClass", function(event) {
 
 $(document).on("click", ".apiLink", function(event) {
 
+   $(".card-body2").empty();
+
 var clickedCurr = $(this).attr("data-currencyName")
 console.log(clickedCurr);
-console.log("Cansu");
 
 var queryURL = "https://newsapi.org/v2/everything?q=" + clickedCurr + 
   "&apiKey=bcd8c23712344119ae60db38b2b3d1cd";
@@ -230,7 +231,12 @@ var queryURL = "https://newsapi.org/v2/everything?q=" + clickedCurr +
         })
 
    .done(function(response) {
-       console.log(queryURL); 
+      console.log(response);
+       
+       console.log(response.articles[1].url);
+
+       console.log(response.articles[1]);
+
 
        var arrayTitles =[];
 
@@ -246,7 +252,9 @@ var queryURL = "https://newsapi.org/v2/everything?q=" + clickedCurr +
 
             var title = response.articles[i].title
 
-            $(".card-body2").prepend('<br><div id="news"><h3 id="title-news">' + title + '</h3><h3 id ="date">'+ " " + newDate+'</h3><p id="parag-news">' +response.articles[i].description +
+
+
+            $(".card-body2").append('<br><div id="news"><h3 id="title-news">' + title + '</h3><h3 id ="date">'+ " " + newDate+'</h3><p id="parag-news">' +response.articles[i].description +
             '</p><a href="link-news" id="link-news">'+response.articles[i].url+ '</a></div>');
 
           }
