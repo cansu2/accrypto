@@ -28,7 +28,7 @@ Propose: The porpose of this file is to serve
         to main.html.
 
 *********************************** **/
- //jquery method for fading in the search bar on search screen
+//jquery method for fading in the search bar on search screen
 $(document).ready(function() {
   $(".hidden")
     .fadeIn(2000)
@@ -37,19 +37,18 @@ $(document).ready(function() {
 
 jQuery.ajaxPrefilter(function(options) {
   if (options.crossDomain && jQuery.support.cors) {
-      options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+    options.url = "https://cors-anywhere.herokuapp.com/" + options.url;
   }
 });
 
 //dynamic click function that allows user to clikc to main.html
 $(document).on("click", "#search", function() {
-    $("audio")[0].play();
-      setTimeout(() => {
-         window.location.href = "main.html";
-         //indexSearch = $('#usr')
-         //indexSearch.text('#searchform');
-      }, 4800);
-
+  $("audio")[0].play();
+  setTimeout(() => {
+    window.location.href = "main.html";
+    //indexSearch = $('#usr')
+    //indexSearch.text('#searchform');
+  }, 4800);
 });
 
 //dynamic click function that allows user to click logo to go to index.html
@@ -58,190 +57,194 @@ $("div").on("click", "#logo", function() {
   setTimeout(() => {
     window.location.href = "index.html";
   }, 800);
-  
 });
 
 //dynamic click function that takes info from the coincompare API and loads it into dynamic
 //cards on the main.html page
 $(document).on("click", ".searchClass", function(event) {
-
   event.preventDefault();
-  var searchVar = $("#searchForm").val().trim();
+  var searchVar = $("#searchForm")
+    .val()
+    .trim();
   var hrChange24;
   var coinAbbrev;
 
+  switch (searchVar.toLowerCase()) {
+    case "bitcoin":
+      coinAbbrev = "BTC";
+      break;
+    case "ethereum":
+      coinAbbrev = "ETH";
+      break;
+    case "litecoin":
+      coinAbbrev = "LTC";
+      break;
+    case "ripple":
+      coinAbbrev = "XRP";
+      break;
+    case "cardano":
+      coinAbbrev = "ADA";
+      break;
+    case "monero":
+      coinAbbrev = "XMR";
+      break;
+    case "neo":
+      coinAbbrev = "NEO";
+      break;
+    case "nem":
+      coinAbbrev = "XEM";
+      break;
+    case "stellar":
+      coinAbbrev = "XLM";
+      break;
+    case "eos":
+      coinAbbrev = "EOS";
+      break;
+    case "tron":
+      coinAbbrev = "TRX";
+      break;
+    case "icon":
+      coinAbbrev = "ICX";
+      break;
+    case "tether":
+      coinAbbrev = "USDT";
+      break;
+    case "lisk":
+      coinAbbrev = "LSK";
+      break;
+    case "qtum":
+      coinAbbrev = "QTUM";
+      break;
+    case "bytecoin":
+      coinAbbrev = "BCN";
+      break;
+    case "status":
+      coinAbbrev = "SNT";
+      break;
+    case "bitshares":
+      coinAbbrev = "BTS";
+      break;
+    case "ox":
+      coinAbbrev = "ZRX";
+      break;
+    case "zcoin":
+      coinAbbrev = "XZC";
+      break;
+    case "zclassic":
+      coinAbbrev = "ZCL";
+      break;
+    case "bancor":
+      coinAbbrev = "BNT";
+      break;
+    case "bitcore":
+      coinAbbrev = "BTX";
+      break;
+    case "digixdao":
+      coinAbbrev = "DGD";
+      break;
+    case "gas":
+      coinAbbrev = "GAS";
+      break;
+    case "decred":
+      coinAbbrev = "DCR";
+      break;
+    case "veritaseum":
+      coinAbbrev = "VERI";
+      break;
+    case "zcash":
+      coinAbbrev = "ZEC";
+      break;
 
-  switch(searchVar.toLowerCase()){
-    case 'bitcoin':
-    coinAbbrev = 'BTC';
-    break;
-    case 'etherium':
-    coinAbbrev = 'ETH';
-    break;
-    case 'litecoin':
-    coinAbbrev = 'LTC';
-    break;
-    case 'ripple':
-    coinAbbrev = 'XRP';
-    break;
-    case 'cardano':
-    coinAbbrev = 'ADA';
-    break;
-    case 'monero':
-    coinAbbrev = 'XMR';
-    break;
-    case 'neo':
-    coinAbbrev = 'NEO';
-    break;
-    case 'nem':
-    coinAbbrev = 'XEM';
-    break;
-    case 'stellar':
-    coinAbbrev = 'XLM';
-    break;
-    case 'eos':
-    coinAbbrev = 'EOS';
-    break;
-    case 'tron':
-    coinAbbrev = 'TRX';
-    break;
-    case 'icon':
-    coinAbbrev = 'ICX';
-    break;
-    case 'tether':
-    coinAbbrev = 'USDT';
-    break;
-    case 'lisk':
-    coinAbbrev = 'LSK';
-    break;
-    case 'qtum':
-    coinAbbrev = 'QTUM';
-    break;
-    case 'bytecoin':
-    coinAbbrev = 'BCN';
-    break;
-    case 'status':
-    coinAbbrev = 'SNT';
-    break;
-    case 'bitshares':
-    coinAbbrev = 'BTS';
-    break;
-    case 'ox':
-    coinAbbrev = 'ZRX';
-    break;
-    case 'zcoin':
-    coinAbbrev = 'XZC';
-    break;
-    case 'zclassic':
-    coinAbbrev = 'ZCL';
-    break;
-    case 'bancor':
-    coinAbbrev = 'BNT';
-    break;
-    case 'bitcore':
-    coinAbbrev = 'BTX';
-    break;
-    case 'digixdao':
-    coinAbbrev = 'DGD';
-    break;
-    case 'gas':
-    coinAbbrev = 'GAS';
-    break;
-    case 'decred':
-    coinAbbrev = 'DCR';
-    break;
-    case 'veritaseum':
-    coinAbbrev = 'VERI';
-    break;
-    case 'zcash':
-    coinAbbrev = 'ZEC';
-    break;
+    default:
+      $("#search3").click(function() {
+        $(".alert").show();
+      });
+  }
+  console.log(coinAbbrev);
+  $.ajax({
+    url:
+      "https://www.cryptocompare.com/api/data/coinsnapshot/?fsym=" +
+      coinAbbrev +
+      "&tsym=USD",
+    method: "GET"
+  }).then(function(response) {
+    console.log(response);
+    var newP = $("<p>");
+    newP.text(response.USD);
+    console.log(response.Data.AggregatedData.PRICE);
+    console.log(response.Data.AggregatedData.LOW24HOUR);
+    var price = response.Data.AggregatedData.PRICE;
+    var hrChange24 = response.Data.AggregatedData.LOW24HOUR;
 
-    default: '';
-    }
- console.log(coinAbbrev);
- $.ajax({
-   url: "https://www.cryptocompare.com/api/data/coinsnapshot/?fsym="+coinAbbrev+"&tsym=USD",
-  method: "GET"
-})
-.then(function(response){
-  console.log(response)
-  var newP = $("<p>")
-  newP.text(response.USD)
-  console.log(response.Data.AggregatedData.PRICE);
-   console.log(response.Data.AggregatedData.LOW24HOUR);
-   var price = response.Data.AggregatedData.PRICE
-   var hrChange24 = response.Data.AggregatedData.LOW24HOUR
+    //check for CORE issures, chrome ext, or cores anywhere heroku
 
+    $("#card-body").prepend(
+      '<div class="card"><div class="card-block"><h4 data-currencyName=' +
+        searchVar +
+        ' class="card-subtitle mb-2 text-muted apiLink">' +
+        searchVar +
+        "</h4><p class='card-text cardtext'>Current Price</p><p class='card-text cardtext' id='current'>$" +
+        price +
+        "</p><p class='card-text cardtext'>Lowest in last 24 Hours</p><p class='card-text cardtext' id='lastWeek'>$" +
+        hrChange24 +
+        "</p>"
+    );
 
-
-
-  //check for CORE issures, chrome ext, or cores anywhere heroku
-
-
- $("#card-body").prepend('<div class="card"><div class="card-block"><h4 data-currencyName='
- +searchVar+ ' class="card-subtitle mb-2 text-muted apiLink">'
-  + searchVar + "</h4><p class='card-text cardtext'>Current Price</p><p class='card-text cardtext' id='current'>$"
-  + price + "</p><p class='card-text cardtext'>Lowest in last 24 Hours</p><p class='card-text cardtext' id='lastWeek'>$"
-  + hrChange24 + "</p>");
-
-  console.log(price);
- })
+    console.log(price);
+  });
 });
 
-
 $(document).on("click", ".apiLink", function(event) {
-  
-  var clickedCurr = $(this).attr("data-currencyName")
+  var clickedCurr = $(this).attr("data-currencyName");
   console.log(clickedCurr);
-  
-  var queryURL = "https://newsapi.org/v2/everything?q=" + clickedCurr + 
+
+  var queryURL =
+    "https://newsapi.org/v2/everything?q=" +
+    clickedCurr +
     "&apiKey=bcd8c23712344119ae60db38b2b3d1cd";
-  
-    $.ajax({
-            url: queryURL,
-            method: "GET"
-          })
-  
-     .done(function(response) {
-         console.log(queryURL); 
-  
-         var arrayTitles =[];
-  
-         for (var i = 1; i < 3; i++){
-  
-              var time  = response.articles[i].publishedAt;
-  
-              var date = new Date((time || "").replace(/-/g,"/").replace(/[TZ]/g," "));
-  
-              var newDate = String(date).substr(4,11);
-  
-              arrayTitles.push(response.articles[i].title); 
-  
-              var title = response.articles[i].title + newDate;
-  
-              $("#card-body2").prepend('<div id="news"><h3 id="title-news">' + title + '</h3><p id="parag-news">' +response.articles[i].description +
-              '</p><a href="link-news">' +response.articles[i].url+ '</a></div>');
-  
-            }
-  
-       })
-  
+
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  })
+  .done(function(response) {
+    console.log(queryURL);
+
+    var arrayTitles = [];
+
+    for (var i = 1; i < 3; i++) {
+      var time = response.articles[i].publishedAt;
+
+      var date = new Date(
+        (time || "").replace(/-/g, "/").replace(/[TZ]/g, " ")
+      );
+
+      var newDate = String(date).substr(4, 11);
+
+      arrayTitles.push(response.articles[i].title);
+
+      var title = response.articles[i].title + newDate;
+
+      $("#card-body2").prepend(
+        '<div id="news"><h3 id="title-news">' +
+          title +
+          '</h3><p id="parag-news">' +
+          response.articles[i].description +
+          '</p><a href="link-news">' +
+          response.articles[i].url +
+          "</a></div>"
+      );
+    }
   });
-  
-  //cansu
+});
 
-
-
+//cansu
 
 // $(document).on("click", ".apiLink", function(event) {
 // var clickedCurr = $(this).attr("data-currencyName")
 // console.log(clickedCurr);
 
-
-
 // //api call to cansu
-
 
 // $("#card-body2").append('<div class="card"><div class="card-block"><h4 data-currencyName='
 //  +searchVar+ ' class="card-subtitle mb-2 text-muted apiLink">'
@@ -257,59 +260,58 @@ $(document).on("click", ".apiLink", function(event) {
 
 // });
 
-
 // news div javascript
 
 //cansu
 
 $(document).on("click", ".apiLink", function(event) {
+  var clickedCurr = $(this).attr("data-currencyName");
+  console.log(clickedCurr);
+  console.log("Cansu");
 
-var clickedCurr = $(this).attr("data-currencyName")
-console.log(clickedCurr);
-console.log("Cansu");
-
-var queryURL = "https://newsapi.org/v2/everything?q=" + clickedCurr + 
-  "&apiKey=bcd8c23712344119ae60db38b2b3d1cd";
+  var queryURL =
+    "https://newsapi.org/v2/everything?q=" +
+    clickedCurr +
+    "&apiKey=bcd8c23712344119ae60db38b2b3d1cd";
 
   $.ajax({
-          url: queryURL,
-          method: "GET"
-        })
+    url: queryURL,
+    method: "GET"
+  })
+  .done(function(response) {
+    console.log(queryURL);
 
-   .done(function(response) {
-       console.log(queryURL); 
+    var arrayTitles = [];
 
-       var arrayTitles =[];
+    for (var i = 1; i < 4; i++) {
+      var time = response.articles[i].publishedAt;
 
-       for (var i = 1; i < 4; i++){
+      var date = new Date(
+        (time || "").replace(/-/g, "/").replace(/[TZ]/g, " ")
+      );
 
-            var time  = response.articles[i].publishedAt;
+      var newDate = String(date).substr(4, 11);
 
-            var date = new Date((time || "").replace(/-/g,"/").replace(/[TZ]/g," "));
+      arrayTitles.push(response.articles[i].title);
 
-            var newDate = String(date).substr(4,11);
+      var title = response.articles[i].title;
 
-            arrayTitles.push(response.articles[i].title); 
-
-            var title = response.articles[i].title
-
-            $(".card-body2").prepend('<br><div id="news"><h3 id="title-news">' + title + '</h3><h3 id ="date">'+ " " + newDate+'</h3><p id="parag-news">' +response.articles[i].description +
-            '</p><a href="link-news" id="link-news">'+response.articles[i].url+ '</a></div>');
-
-          }
-
-     })
-
+      $(".card-body2").prepend(
+        '<br><div id="news"><h3 id="title-news">' +
+          title +
+          '</h3><h3 id ="date">' +
+          " " +
+          newDate +
+          '</h3><p id="parag-news">' +
+          response.articles[i].description +
+          '</p><a href="link-news" id="link-news">' +
+          response.articles[i].url +
+          "</a></div>"
+      );
+    }
+  });
 });
 
 //cansu
 
-
 // news div javascript
-
-
-
-
-
-
-
