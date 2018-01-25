@@ -53,6 +53,7 @@ h4 {
     border-width: 1px;
     border-color: aliceblue;
     border-style: solid;
+    border-radius: 6px;
     padding: 10px;
 }
 
@@ -86,11 +87,28 @@ h4 {
 
 
 footer {
-    height: 100px;
+    position: static;
+    left: 0;x
+    bottom: 0;
     width: 100%;
-    background-color: rgb(37, 36, 36)
-    
-}
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(29, 29, 29);
+    color: rgb(129, 125, 125);
+    text-align: center;
+ }
+
+ #footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(29, 29, 29);
+    color: rgb(129, 125, 125);
+    text-align: center;
+ }
 
 /* test for the dynamic buttons*/
 
@@ -111,7 +129,7 @@ footer {
 
 .text {
   font: bold 1.25rem/1 poppins;
-  color: #71DFBE;
+  color: rgb(190, 181, 55);
   position: absolute;
   top: 50%;
   transform: translateY(-52%);
@@ -134,7 +152,7 @@ footer {
 svg {
   width: 30px;
   position: absolute;
-  top: 50%;
+  top: 100%;
   transform: translateY(-50%) translateX(-50%);
   left: 50%;
   right: 0;
@@ -146,4 +164,16 @@ svg {
   stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+.search-forms{
+    display: flex;
+}
+
+#search3{
+    margin-left: 10px;
+}
+
+.alert{
+    display: none;
 }
