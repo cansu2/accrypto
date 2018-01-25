@@ -29,10 +29,21 @@ Propose: The porpose of this file is to serve
 
 *********************************** **/
  //jquery method for fading in the search bar on search screen
+
+
 $(document).ready(function() {
   $(".hidden")
     .fadeIn(2000)
     .removeClass("hidden");
+
+  var searchVar = window.location.search.substr(8);
+
+  if (searchVar != "undefined"){
+    searchQuery(searchVar)
+  } else {
+    alert("search A coin");
+  }
+
 });
 
 jQuery.ajaxPrefilter(function(options) {
@@ -43,14 +54,21 @@ jQuery.ajaxPrefilter(function(options) {
 
 //dynamic click function that allows user to clikc to main.html
 $(document).on("click", "#search", function() {
+
+    var query = $("#searchFormInput").val();
+    console.log(query);
+
     $("audio")[0].play();
       setTimeout(() => {
-         window.location.href = "main.html";
+        
+         window.location.replace("main.html?search="+query);
          //indexSearch = $('#usr')
          //indexSearch.text('#searchform');
       }, 4800);
 
 });
+ // var searchVar = window.location.search.substr(8);
+
 
 //dynamic click function that allows user to click logo to go to index.html
 $("div").on("click", "#logo", function() {
@@ -61,12 +79,10 @@ $("div").on("click", "#logo", function() {
   
 });
 
-//dynamic click function that takes info from the coincompare API and loads it into dynamic
-//cards on the main.html page
-$(document).on("click", ".searchClass", function(event) {
 
-  event.preventDefault();
-  var searchVar = $("#searchForm").val().trim();
+function searchQuery(query){
+  // var searchVar = $("#searchForm").val().trim();
+  searchVar = query || $(".searchForm").val().trim();
   var hrChange24;
   var coinAbbrev;
 
@@ -187,16 +203,24 @@ $(document).on("click", ".searchClass", function(event) {
 
   console.log(price);
  })
+}
+//dynamic click function that takes info from the coincompare API and loads it into dynamic
+//cards on the main.html page
+$(document).on("click", ".searchClass", function(event) {
+
+  event.preventDefault();
+  searchQuery();
+  
 });
 
 
 $(document).on("click", ".apiLink", function(event) {
   
-  var clickedCurr = $(this).attr("data-currencyName")
+  var clickedCurr = $(this).attr("data-currencyName") + "coin";
   console.log(clickedCurr);
   
-  var queryURL = "https://newsapi.org/v2/everything?q=" + clickedCurr + 
-    "&apiKey=bcd8c23712344119ae60db38b2b3d1cd";
+  var queryURL = "https://newsapi.org/v2/everything?language=en&q=" + clickedCurr + 
+    "&sortBy=popularity&apiKey=bcd8c23712344119ae60db38b2b3d1cd";
   
     $.ajax({
             url: queryURL,
