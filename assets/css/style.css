@@ -12,7 +12,7 @@ h4 {
     margin-top: 90px;
     width: 100%;
     height: auto;
-   
+
 }
 
 #searchbar {
@@ -24,14 +24,14 @@ h4 {
 }
 
 #crypto-header{
-    font-family: 'Joti One', cursive;
+    font-family: 'Roboto',;
     font-size: 20px;
     text-align: center;
 }
 
 .hidden {
     display: none;
-    
+
 }
 
 .card {
@@ -45,7 +45,7 @@ h4 {
 }
 
 .cardtext {
-    font-family: 'Playfair Display', serif;
+    font-family: 'slabo',sans-serif;
     font-size: 14px;
 }
 
@@ -89,7 +89,7 @@ footer {
     height: 100px;
     width: 100%;
     background-color: rgb(37, 36, 36)
-    
+
 }
 
 /* test for the dynamic buttons*/
@@ -146,4 +146,8 @@ svg {
   stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+.hide{
+  display: none;
 }

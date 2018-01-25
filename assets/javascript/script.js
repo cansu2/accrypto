@@ -58,7 +58,7 @@ $("div").on("click", "#logo", function() {
   setTimeout(() => {
     window.location.href = "index.html";
   }, 800);
-  
+
 });
 
 //dynamic click function that takes info from the coincompare API and loads it into dynamic
@@ -75,7 +75,7 @@ $(document).on("click", ".searchClass", function(event) {
     case 'bitcoin':
     coinAbbrev = 'BTC';
     break;
-    case 'etherium':
+    case 'ethereum':
     coinAbbrev = 'ETH';
     break;
     case 'litecoin':
@@ -190,45 +190,53 @@ $(document).on("click", ".searchClass", function(event) {
 });
 
 
+
+
+$(document).on("click", "#reddit-button", function() {
+  console.log("this is working");
+  $("#reddit-content").removeClass("hide")
+
+})
+
 $(document).on("click", ".apiLink", function(event) {
-  
+
   var clickedCurr = $(this).attr("data-currencyName")
   console.log(clickedCurr);
-  
-  var queryURL = "https://newsapi.org/v2/everything?q=" + clickedCurr + 
+
+  var queryURL = "https://newsapi.org/v2/everything?q=" + clickedCurr +
     "&apiKey=bcd8c23712344119ae60db38b2b3d1cd";
-  
+
     $.ajax({
             url: queryURL,
             method: "GET"
           })
-  
+
      .done(function(response) {
-         console.log(queryURL); 
-  
+         console.log(queryURL);
+
          var arrayTitles =[];
-  
+
          for (var i = 1; i < 3; i++){
-  
+
               var time  = response.articles[i].publishedAt;
-  
+
               var date = new Date((time || "").replace(/-/g,"/").replace(/[TZ]/g," "));
-  
+
               var newDate = String(date).substr(4,11);
-  
-              arrayTitles.push(response.articles[i].title); 
-  
+
+              arrayTitles.push(response.articles[i].title);
+
               var title = response.articles[i].title + newDate;
-  
+
               $("#card-body2").prepend('<div id="news"><h3 id="title-news">' + title + '</h3><p id="parag-news">' +response.articles[i].description +
               '</p><a href="link-news">' +response.articles[i].url+ '</a></div>');
-  
+
             }
-  
+
        })
-  
+
   });
-  
+
   //cansu
 
 
@@ -268,7 +276,7 @@ var clickedCurr = $(this).attr("data-currencyName")
 console.log(clickedCurr);
 console.log("Cansu");
 
-var queryURL = "https://newsapi.org/v2/everything?q=" + clickedCurr + 
+var queryURL = "https://newsapi.org/v2/everything?q=" + clickedCurr +
   "&apiKey=bcd8c23712344119ae60db38b2b3d1cd";
 
   $.ajax({
@@ -277,7 +285,7 @@ var queryURL = "https://newsapi.org/v2/everything?q=" + clickedCurr +
         })
 
    .done(function(response) {
-       console.log(queryURL); 
+       console.log(queryURL);
 
        var arrayTitles =[];
 
@@ -289,7 +297,7 @@ var queryURL = "https://newsapi.org/v2/everything?q=" + clickedCurr +
 
             var newDate = String(date).substr(4,11);
 
-            arrayTitles.push(response.articles[i].title); 
+            arrayTitles.push(response.articles[i].title);
 
             var title = response.articles[i].title
 
@@ -306,10 +314,3 @@ var queryURL = "https://newsapi.org/v2/everything?q=" + clickedCurr +
 
 
 // news div javascript
-
-
-
-
-
-
-
