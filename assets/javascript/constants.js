@@ -58,7 +58,7 @@ basicTimeline
   })
   .add({
     targets: ".progress-bar",
-    duration: 2000,
+    duration: 1000,
     width: 300,
     easing: "linear"
   })
