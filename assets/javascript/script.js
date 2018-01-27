@@ -51,14 +51,6 @@ $(document).on("click", "#search", function() {
   }, 4800);
 });
 
-//dynamic click function that allows user to click logo to go to index.html
-$("div").on("click", "#logo", function() {
-  $("audio")[0].play();
-  setTimeout(() => {
-    window.location.href = "index.html";
-  }, 800);
-});
-
 //dynamic click function that takes info from the coincompare API and loads it into dynamic
 //cards on the main.html page
 $(document).on("click", ".searchClass", function(event) {

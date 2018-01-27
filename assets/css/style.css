@@ -177,3 +177,16 @@ svg {
 .alert{
     display: none;
 }
+
+#hiddenButton{
+    float: right;
+    background-color: #000000;
+    border-color: #000000;
+    width: 40 px;
+    height: 20px;
+    margin-right: 30px;
+}
+
+#hiddenButton:hover{
+    border-color: #888888;
+}
