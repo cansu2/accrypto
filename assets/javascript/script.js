@@ -175,7 +175,7 @@ $(document).on("click", ".searchClass", function(event) {
         searchVar +
         ' class="card-subtitle mb-2 text-muted apiLink">' +
         searchVar +
-        "</h4><p class='card-text cardtext'>Current Price</p><p class='card-text cardtext' id='current'>$" +
+        "</h4><p class='card-text cardtext'>Current Price</p><p class='card-text cardtext color' id='current'>$" +
         price +
         "</p><p class='card-text cardtext'>Lowest in last 24 Hours</p><p class='card-text cardtext' id='lastWeek'>$" +
         hrChange24 +

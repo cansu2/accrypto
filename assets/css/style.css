@@ -24,7 +24,7 @@ h4 {
 }
 
 #crypto-header{
-    font-family: 'Joti One', cursive;
+    font-family: 'Roboto',sans-serif;
     font-size: 20px;
     text-align: center;
 }
@@ -45,7 +45,7 @@ h4 {
 }
 
 .cardtext {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Slabo 27px', serif;
     font-size: 14px;
 }
 
@@ -92,7 +92,6 @@ footer {
     bottom: 0;
     width: 100%;
     margin-top: 20px;
-    margin-bottom: 20px;
     background-color: rgb(29, 29, 29);
     color: rgb(129, 125, 125);
     text-align: center;
@@ -104,7 +103,6 @@ footer {
     bottom: 0;
     width: 100%;
     margin-top: 20px;
-    margin-bottom: 20px;
     background-color: rgb(29, 29, 29);
     color: rgb(129, 125, 125);
     text-align: center;
@@ -189,4 +187,8 @@ svg {
 
 #hiddenButton:hover{
     border-color: #888888;
+}
+
+.color{
+    color: green;
 }
